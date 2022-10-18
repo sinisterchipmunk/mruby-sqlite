@@ -788,9 +788,6 @@ mrb_SQLite_Sqlite3IoMethods_set_xUnfetch(mrb_state* mrb, mrb_value self) {
 
 
 void mrb_SQLite_Sqlite3IoMethods_init(mrb_state* mrb) {
-  static int initialized = 0;
-  if (initialized) return;
-  else initialized = 1;
 
 /* MRUBY_BINDING: pre_class_definition */
 /* sha: user_defined */
