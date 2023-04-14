@@ -1259,6 +1259,9 @@ mrb_SQLite_sqlite3_close(mrb_state* mrb, mrb_value self) {
   /* Invocation */
   int native_return_value = sqlite3_close(native_arg1);
 
+  // Prevent double free of sqlite3 * on garbage collection
+  mruby_set_sqlite3_data_ptr(arg1, NULL);
+
   /* Box the return value */
   mrb_value return_value = mrb_fixnum_value(native_return_value);
   
