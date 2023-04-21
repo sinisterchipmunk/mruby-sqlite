@@ -1598,13 +1598,13 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef SQLITE_SOURCE_ID
   do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_SOURCE_ID);
+    mrb_value macro = mrb_str_new_lit(mrb, SQLITE_SOURCE_ID);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_SOURCE_ID", macro);
   } while (0);
 #endif
 #ifdef SQLITE_STATIC
   do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_STATIC);
+    mrb_value macro = mrb_fixnum_value(0);//SQLITE_STATIC);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_STATIC", macro);
   } while (0);
 #endif
@@ -1868,7 +1868,7 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef SQLITE_TRANSIENT
   do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_TRANSIENT);
+    mrb_value macro = mrb_fixnum_value(-1);//SQLITE_TRANSIENT);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_TRANSIENT", macro);
   } while (0);
 #endif
@@ -1910,7 +1910,7 @@ mruby_SQLite_define_macro_constants(mrb_state* mrb) {
 #endif
 #ifdef SQLITE_VERSION
   do {
-    mrb_value macro = mrb_fixnum_value(SQLITE_VERSION);
+    mrb_value macro = mrb_str_new_lit(mrb, SQLITE_VERSION);
     mrb_define_const(mrb, SQLite_module(mrb), "SQLITE_VERSION", macro);
   } while (0);
 #endif
