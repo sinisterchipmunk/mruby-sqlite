@@ -1,7 +1,7 @@
 #ifndef MRUBY_SQLite_CLASSES_HEADER
 #define MRUBY_SQLite_CLASSES_HEADER
 
-#define BIND_Mem_TYPE TRUE
+#define BIND_Mem_TYPE FALSE
 #define BIND_Mem_INITIALIZE TRUE
 
 #define BIND_Sqlite3_TYPE TRUE
